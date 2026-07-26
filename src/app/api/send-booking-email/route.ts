@@ -19,7 +19,7 @@ export async function POST(request: NextRequest) {
 
     const resend = new Resend(resendApiKey);
     const data = await resend.emails.send({
-      from: 'Park BBQ Kitchen <villaparkbbqkitchen@gmail.com>',
+      from: 'Park BBQ Kitchen <onboarding@resend.dev>',
       to: [email],
       subject: 'Your Park BBQ Kitchen Booking Confirmation',
       html: `
