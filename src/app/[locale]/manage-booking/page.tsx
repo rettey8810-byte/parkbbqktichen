@@ -18,7 +18,6 @@ export default function ManageBookingPage() {
   const t = useTranslations();
   const router = useRouter();
   const [bookingNumber, setBookingNumber] = useState('');
-  const [bookingPassword, setBookingPassword] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState('');
   const [booking, setBooking] = useState<any>(null);
@@ -61,7 +60,7 @@ export default function ManageBookingPage() {
     setIsLoading(true);
 
     try {
-      const result = await getBookingByCredentials(bookingNumber, bookingPassword);
+      const result = await getBookingByCredentials(bookingNumber, '');
       if (!result) {
         setError(t('manageBooking.invalidCredentials'));
         return;
@@ -87,7 +86,6 @@ export default function ManageBookingPage() {
       setBooking(null);
       setShowDetails(false);
       setBookingNumber('');
-      setBookingPassword('');
     } catch (err) {
       setError(t('manageBooking.cancelBookingFailed'));
     } finally {
@@ -226,7 +224,7 @@ export default function ManageBookingPage() {
       alert('Booking completed successfully!');
       
       // Refresh booking data
-      const result = await getBookingByCredentials(bookingNumber, bookingPassword);
+      const result = await getBookingByCredentials(bookingNumber, '');
       setBooking(result);
     } catch (err) {
       console.error('Error completing booking:', err);
@@ -274,18 +272,6 @@ export default function ManageBookingPage() {
                     placeholder="e.g., BK123ABC456"
                     value={bookingNumber}
                     onChange={(e) => setBookingNumber(e.target.value)}
-                    required
-                    className="text-base"
-                  />
-                </div>
-                <div className="space-y-2">
-                  <Label htmlFor="bookingPassword" className="text-sm">{t('bookingForm.bookingPassword')}</Label>
-                  <Input
-                    id="bookingPassword"
-                    type="password"
-                    placeholder="Enter your booking password"
-                    value={bookingPassword}
-                    onChange={(e) => setBookingPassword(e.target.value)}
                     required
                     className="text-base"
                   />

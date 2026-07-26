@@ -319,9 +319,5 @@ export async function getBookingByCredentials(bookingNumber: string, bookingPass
     ...booking.data()
   } as Booking;
   
-  if (bookingData.bookingPassword !== bookingPassword) {
-    return null;
-  }
-  
   return bookingData;
 }
