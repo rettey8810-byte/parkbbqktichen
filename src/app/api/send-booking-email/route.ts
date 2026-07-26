@@ -1,20 +1,18 @@
+import { NextRequest, NextResponse } from 'next/server';
 import { Resend } from 'resend';
 
-export async function sendBookingConfirmationEmail(
-  email: string,
-  bookingNumber: string,
-  employeeName: string,
-  bookingDate: string,
-  slot: string
-) {
-  // Check if API key is configured
-  const resendApiKey = process.env.RESEND_API_KEY;
-  if (!resendApiKey || resendApiKey === 'your_resend_api_key_here') {
-    console.warn('Resend API key not configured. Skipping email send.');
-    return { success: false, error: 'API key not configured' };
-  }
-
+export async function POST(request: NextRequest) {
   try {
+    const body = await request.json();
+    const { email, bookingNumber, employeeName, bookingDate, slot } = body;
+
+    // Check if API key is configured
+    const resendApiKey = process.env.RESEND_API_KEY;
+    if (!resendApiKey || resendApiKey === 'your_resend_api_key_here') {
+      console.warn('Resend API key not configured. Skipping email send.');
+      return NextResponse.json({ success: false, error: 'API key not configured' }, { status: 200 });
+    }
+
     const resend = new Resend(resendApiKey);
     const data = await resend.emails.send({
       from: 'Park BBQ Kitchen <villaparkbbqkitchen@gmail.com>',
@@ -50,9 +48,9 @@ export async function sendBookingConfirmationEmail(
       `,
     });
 
-    return { success: true, data };
+    return NextResponse.json({ success: true, data });
   } catch (error) {
     console.error('Email send error:', error);
-    return { success: false, error };
+    return NextResponse.json({ success: false, error }, { status: 500 });
   }
 }

@@ -293,6 +293,28 @@ export default function BookingPage() {
         bookingNumber: result.bookingNumber
       });
       setBookingSuccess(true);
+
+      // Send booking confirmation email
+      if (email) {
+        try {
+          await fetch('/api/send-booking-email', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+              email,
+              bookingNumber: result.bookingNumber,
+              employeeName,
+              bookingDate: format(selectedDate, 'yyyy-MM-dd'),
+              slot,
+            }),
+          });
+        } catch (emailError) {
+          console.error('Failed to send confirmation email:', emailError);
+          // Don't fail the booking if email fails
+        }
+      }
     } catch (err: any) {
       console.error('Booking error:', err);
       if (err.message === 'already_booked') {
