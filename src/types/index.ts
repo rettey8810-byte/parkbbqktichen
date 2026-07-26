@@ -19,6 +19,7 @@ export interface Booking {
   employeeName: string;
   employeeDepartment: string;
   contactNumber?: string;
+  email?: string;
   bookingDate: string;
   slot: string;
   pax: number;

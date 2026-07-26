@@ -3,6 +3,7 @@ import { collection, doc, getDoc, query, where, getDocs, addDoc, updateDoc, dele
 import { Booking } from '@/types';
 import { logBookingCreated } from './auditLog';
 import { validateBookingDate, validateGuestCount, validateSlot, sanitizeInput } from './security';
+import { sendBookingConfirmationEmail } from './email';
 
 // Generate unique booking number
 function generateBookingNumber(): string {
@@ -130,6 +131,22 @@ export async function createBooking(bookingData: Partial<Booking>) {
   const docRef = await addDoc(collection(db, 'bookings'), data);
   
   await logBookingCreated(bookingData.employeeId!, bookingData.employeeName!, docRef.id);
+  
+  // Send booking confirmation email
+  if (bookingData.email) {
+    try {
+      await sendBookingConfirmationEmail(
+        bookingData.email,
+        bookingNumber,
+        bookingData.employeeName!,
+        bookingData.bookingDate!,
+        bookingData.slot!
+      );
+    } catch (emailError) {
+      console.error('Failed to send confirmation email:', emailError);
+      // Don't fail the booking if email fails
+    }
+  }
   
   return {
     id: docRef.id,

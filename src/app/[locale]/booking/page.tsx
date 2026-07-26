@@ -28,6 +28,7 @@ export default function BookingPage() {
   const [employeeName, setEmployeeName] = useState('');
   const [department, setDepartment] = useState('');
   const [contactNumber, setContactNumber] = useState('');
+  const [email, setEmail] = useState('');
   const [pax, setPax] = useState(1);
   const [remarks, setRemarks] = useState('');
   const [agreement, setAgreement] = useState(false);
@@ -37,7 +38,7 @@ export default function BookingPage() {
   const [error, setError] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [bookingSuccess, setBookingSuccess] = useState(false);
-  const [bookingCredentials, setBookingCredentials] = useState<{bookingNumber: string, bookingPassword: string} | null>(null);
+  const [bookingCredentials, setBookingCredentials] = useState<{bookingNumber: string} | null>(null);
   const [showNameDropdown, setShowNameDropdown] = useState(false);
   const [nameSearchResults, setNameSearchResults] = useState<any[]>([]);
   const [isSearchingName, setIsSearchingName] = useState(false);
@@ -276,6 +277,7 @@ export default function BookingPage() {
         employeeName,
         employeeDepartment: department,
         contactNumber,
+        email,
         bookingDate: format(selectedDate, 'yyyy-MM-dd'),
         slot,
         pax,
@@ -288,8 +290,7 @@ export default function BookingPage() {
       const result = await createBooking(bookingData);
       console.log('Booking created successfully:', result);
       setBookingCredentials({
-        bookingNumber: result.bookingNumber,
-        bookingPassword: result.bookingPassword
+        bookingNumber: result.bookingNumber
       });
       setBookingSuccess(true);
     } catch (err: any) {
@@ -641,6 +642,18 @@ export default function BookingPage() {
               </div>
 
               <div className="space-y-2">
+                <Label className="text-sm">Email</Label>
+                <Input
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  required
+                  className="text-base"
+                  placeholder="your.email@example.com"
+                />
+              </div>
+
+              <div className="space-y-2">
                 <Label className="text-sm">{t('booking.remarks')}</Label>
                 <Input
                   value={remarks}
@@ -695,16 +708,12 @@ export default function BookingPage() {
                       <Label className="text-xs text-gray-600">{t('bookingForm.bookingNumber')}</Label>
                       <div className="text-lg font-bold text-gray-900 mt-1">{bookingCredentials.bookingNumber}</div>
                     </div>
-                    <div>
-                      <Label className="text-xs text-gray-600">{t('bookingForm.bookingPassword')}</Label>
-                      <div className="text-lg font-bold text-gray-900 mt-1">{bookingCredentials.bookingPassword}</div>
-                    </div>
                   </div>
                 </div>
                 <div className="flex flex-col sm:flex-row gap-2">
                   <Button 
                     onClick={() => {
-                      navigator.clipboard.writeText(`Booking Number: ${bookingCredentials.bookingNumber}\nBooking Password: ${bookingCredentials.bookingPassword}`);
+                      navigator.clipboard.writeText(`Booking Number: ${bookingCredentials.bookingNumber}`);
                       alert(t('bookingForm.credentialsCopied'));
                     }}
                     variant="outline"
