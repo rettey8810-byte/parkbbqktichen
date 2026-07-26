@@ -52,6 +52,7 @@ export async function POST(request: NextRequest) {
       `,
     });
 
+    console.log('Resend response:', JSON.stringify(data));
     return NextResponse.json({ success: true, data });
   } catch (error) {
     console.error('Email send error:', error);
