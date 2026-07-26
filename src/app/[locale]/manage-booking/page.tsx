@@ -142,7 +142,7 @@ export default function ManageBookingPage() {
       
       // Refresh booking data
       await new Promise(resolve => setTimeout(resolve, 500)); // Small delay to ensure Firestore update
-      const result = await getBookingByCredentials(bookingNumber, bookingPassword);
+      const result = await getBookingByCredentials(bookingNumber, '');
       setBooking(result);
       console.log('Updated booking after change request:', result);
     } catch (err: any) {
@@ -480,7 +480,6 @@ export default function ManageBookingPage() {
                         setBooking(null);
                         setShowDetails(false);
                         setBookingNumber('');
-                        setBookingPassword('');
                       }}
                       variant="outline"
                       className="flex-1 text-sm"
@@ -496,7 +495,6 @@ export default function ManageBookingPage() {
                       setBooking(null);
                       setShowDetails(false);
                       setBookingNumber('');
-                      setBookingPassword('');
                     }}
                     variant="outline"
                     className="w-full text-sm"
