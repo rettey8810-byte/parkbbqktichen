@@ -264,7 +264,7 @@
     "cleanupChecklistDesc": "After using the kitchen, complete the cleanup checklist: kitchen cleaned, equipment returned, gas turned off, trash disposed, surfaces wiped. Upload a photo of the clean kitchen.",
     "quickReference": "Quick Reference",
     "employeeWorkflow": "Employee Workflow",
-    "employeeWorkflowDesc": "Open App → Click Book Now → Fill Details → Sign → Get Credentials → Use Kitchen → Complete Cleanup → Book Again",
+    "employeeWorkflowDesc": "Open App → Click Book Now → Fill Details → Sign → Receive Booking Number via Email → Use Kitchen → Complete Cleanup → Book Again",
     "bookingStatusMeanings": "Booking Status Meanings",
     "bookedDesc": "Booking is confirmed and approved",
     "completedDesc": "Booking has been used and cleanup verified",
@@ -278,8 +278,8 @@
     "bestPractices": "Best Practices",
     "bookEarly": "Book Early",
     "bookEarlyDesc": "Book your slot in advance to ensure availability",
-    "saveCredentials": "Save Credentials",
-    "saveCredentialsDesc": "Save your booking number and password securely",
+    "saveBookingNumber": "Save Booking Number",
+    "saveBookingNumberDesc": "Save your booking number securely - it will be sent to your email after booking",
     "completeCleanup": "Complete Cleanup",
     "completeCleanupDesc": "Always complete the cleanup checklist to avoid blocking future bookings",
     "requestChangesEarly": "Request Changes Early",
@@ -296,11 +296,11 @@
     "bookingQuestions": "Booking Questions",
     "adminQuestions": "Admin Questions",
     "q1": "How do I book the kitchen?",
-    "a1": "Click \"Book Now\" on the home page, select your name, choose a date and time slot, enter guest count and contact details, agree to terms, sign, and submit.",
+    "a1": "Click Book Now on the home page, select your name, choose a date and time slot, enter guest count and contact details, agree to terms, sign, and submit. Your booking number will be sent to your email.",
     "q2": "How far in advance can I book?",
     "a2": "You can book up to 3 days in advance (today, tomorrow, or day after tomorrow). For today's bookings, you must book at least 2 hours before the slot.",
     "q3": "How do I cancel my booking?",
-    "a3": "Go to \"Manage Booking\", enter your booking number, and click \"Cancel Booking\". You can cancel up to 2 hours before your slot.",
+    "a3": "Go to Manage Booking, enter your booking number, and click Cancel Booking. You can cancel up to 2 hours before your slot.",
     "q4": "Can I change my booking time?",
     "a4": "Yes, use \"Manage Booking\" to request a date/time change. Changes require admin approval and must be requested at least 2 hours before your current slot.",
     "q5": "What happens if I don't complete the cleanup?",
@@ -308,6 +308,6 @@
     "q6": "How many guests can I bring?",
     "a6": "Maximum 50 guests per booking.",
     "q7": "How do I access the admin dashboard?",
-    "a7": "Click \"Admin\" on the home page and enter your admin credentials. Only authorized administrators can access the dashboard."
+    "a7": "Click Admin on the home page and enter your admin email. Only authorized administrators can access the dashboard."
   }
 }

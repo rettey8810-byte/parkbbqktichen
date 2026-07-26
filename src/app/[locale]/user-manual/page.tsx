@@ -177,7 +177,7 @@ export default function UserManualPage() {
             <CardContent>
               <ol className="list-decimal list-inside space-y-2 text-gray-600">
                 <li><strong>{t('userManual.bookEarly')}:</strong> {t('userManual.bookEarlyDesc')}</li>
-                <li><strong>{t('userManual.saveCredentials')}:</strong> {t('userManual.saveCredentialsDesc')}</li>
+                <li><strong>{t('userManual.saveBookingNumber')}:</strong> {t('userManual.saveBookingNumberDesc')}</li>
                 <li><strong>{t('userManual.completeCleanup')}:</strong> {t('userManual.completeCleanupDesc')}</li>
                 <li><strong>{t('userManual.requestChangesEarly')}:</strong> {t('userManual.requestChangesEarlyDesc')}</li>
                 <li><strong>{t('userManual.checkAvailability')}:</strong> {t('userManual.checkAvailabilityDesc')}</li>
