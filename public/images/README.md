@@ -9,13 +9,13 @@ Save the following screenshots in this folder (`public/images/`) with the exact 
 
 ### Booking Process
 - `02-booking-form-employee-search.png` - Booking form with employee search fields
-- `03-calendar-availability.png` - Calendar showing available dates with color-coded availability
-- `04-time-slot-selection.png` - Time slot selection dropdown
+- `03-calendar-availability.png` - Calendar showing available dates with color-coded availability (3-day window)
+- `04-time-slot-selection.png` - Time slot selection dropdown (minimum 2 hours in advance)
 - `05-signature-pad.png` - Signature pad for digital signature
-- `06-booking-success.png` - Booking success page with booking number and password
+- `06-booking-success.png` - Booking success page with booking number (sent via email)
 
 ### Booking Management
-- `07-manage-booking-page.png` - Manage Booking page with booking number and password fields
+- `07-manage-booking-page.png` - Manage Booking page with booking number field only (no password)
 - `08-booking-details.png` - Booking details display
 - `09-change-request-form.png` - Change request form with date, slot, and reason fields
 - `10-cancel-booking.png` - Cancel booking confirmation
