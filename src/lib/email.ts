@@ -1,7 +1,5 @@
 import { Resend } from 'resend';
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 export async function sendBookingConfirmationEmail(
   email: string,
   bookingNumber: string,
@@ -9,7 +7,15 @@ export async function sendBookingConfirmationEmail(
   bookingDate: string,
   slot: string
 ) {
+  // Check if API key is configured
+  const resendApiKey = process.env.RESEND_API_KEY;
+  if (!resendApiKey || resendApiKey === 'your_resend_api_key_here') {
+    console.warn('Resend API key not configured. Skipping email send.');
+    return { success: false, error: 'API key not configured' };
+  }
+
   try {
+    const resend = new Resend(resendApiKey);
     const data = await resend.emails.send({
       from: 'Park BBQ Kitchen <villaparkbbqkitchen@gmail.com>',
       to: [email],
