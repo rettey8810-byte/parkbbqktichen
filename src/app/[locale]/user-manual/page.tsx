@@ -122,7 +122,7 @@ export default function UserManualPage() {
             onClick={() => toggleSection('quick-reference')}
           >
             <div className="flex justify-between items-center">
-              <CardTitle className="text-xl">Quick Reference</CardTitle>
+              <CardTitle className="text-xl">{t('userManual.quickReference')}</CardTitle>
               {expandedSections.includes('quick-reference') ? (
                 <ChevronUp className="w-5 h-5" />
               ) : (
@@ -133,25 +133,25 @@ export default function UserManualPage() {
           {expandedSections.includes('quick-reference') && (
             <CardContent className="space-y-4">
               <div>
-                <h3 className="font-semibold mb-2">Employee Workflow</h3>
-                <p className="text-gray-600">Open App → Click Book Now → Fill Details → Sign → Get Credentials → Use Kitchen → Complete Cleanup → Book Again</p>
+                <h3 className="font-semibold mb-2">{t('userManual.employeeWorkflow')}</h3>
+                <p className="text-gray-600">{t('userManual.employeeWorkflowDesc')}</p>
               </div>
               <div>
-                <h3 className="font-semibold mb-2">Booking Status Meanings</h3>
+                <h3 className="font-semibold mb-2">{t('userManual.bookingStatusMeanings')}</h3>
                 <ul className="list-disc list-inside text-gray-600 space-y-1">
-                  <li><strong>Booked:</strong> Booking is confirmed and approved</li>
-                  <li><strong>Completed:</strong> Booking has been used and cleanup verified</li>
-                  <li><strong>Cancelled:</strong> Booking was cancelled</li>
-                  <li><strong>No Show:</strong> Employee did not show up for the booking</li>
+                  <li><strong>{t('status.booked')}:</strong> {t('userManual.bookedDesc')}</li>
+                  <li><strong>{t('status.completed')}:</strong> {t('userManual.completedDesc')}</li>
+                  <li><strong>{t('status.cancelled')}:</strong> {t('userManual.cancelledDesc')}</li>
+                  <li><strong>{t('status.noShow')}:</strong> {t('userManual.noShowDesc')}</li>
                 </ul>
               </div>
               <div>
-                <h3 className="font-semibold mb-2">Approval Status Meanings</h3>
+                <h3 className="font-semibold mb-2">{t('userManual.approvalStatusMeanings')}</h3>
                 <ul className="list-disc list-inside text-gray-600 space-y-1">
-                  <li><strong>Approved:</strong> Booking is approved</li>
-                  <li><strong>Pending:</strong> Waiting for admin approval</li>
-                  <li><strong>Rejected:</strong> Booking was rejected</li>
-                  <li><strong>Change Requested:</strong> Employee requested to change date/time</li>
+                  <li><strong>{t('status.approved')}:</strong> {t('userManual.approvedDesc')}</li>
+                  <li><strong>{t('status.pending')}:</strong> {t('userManual.pendingDesc')}</li>
+                  <li><strong>{t('status.rejected')}:</strong> {t('userManual.rejectedDesc')}</li>
+                  <li><strong>{t('status.changeRequested')}:</strong> {t('userManual.changeRequestedDesc')}</li>
                 </ul>
               </div>
             </CardContent>
@@ -165,7 +165,7 @@ export default function UserManualPage() {
             onClick={() => toggleSection('best-practices')}
           >
             <div className="flex justify-between items-center">
-              <CardTitle className="text-xl">Best Practices</CardTitle>
+              <CardTitle className="text-xl">{t('userManual.bestPractices')}</CardTitle>
               {expandedSections.includes('best-practices') ? (
                 <ChevronUp className="w-5 h-5" />
               ) : (
@@ -176,12 +176,12 @@ export default function UserManualPage() {
           {expandedSections.includes('best-practices') && (
             <CardContent>
               <ol className="list-decimal list-inside space-y-2 text-gray-600">
-                <li><strong>Book Early:</strong> Book your slot in advance to ensure availability</li>
-                <li><strong>Save Credentials:</strong> Save your booking number and password securely</li>
-                <li><strong>Complete Cleanup:</strong> Always complete the cleanup checklist to avoid blocking future bookings</li>
-                <li><strong>Request Changes Early:</strong> If you need to change your booking, request changes as early as possible</li>
-                <li><strong>Check Availability:</strong> Use the calendar to check slot availability before booking</li>
-                <li><strong>Contact Admin:</strong> If you need help, contact admin instead of making multiple bookings</li>
+                <li><strong>{t('userManual.bookEarly')}:</strong> {t('userManual.bookEarlyDesc')}</li>
+                <li><strong>{t('userManual.saveCredentials')}:</strong> {t('userManual.saveCredentialsDesc')}</li>
+                <li><strong>{t('userManual.completeCleanup')}:</strong> {t('userManual.completeCleanupDesc')}</li>
+                <li><strong>{t('userManual.requestChangesEarly')}:</strong> {t('userManual.requestChangesEarlyDesc')}</li>
+                <li><strong>{t('userManual.checkAvailability')}:</strong> {t('userManual.checkAvailabilityDesc')}</li>
+                <li><strong>{t('userManual.contactAdmin')}:</strong> {t('userManual.contactAdminDesc')}</li>
               </ol>
             </CardContent>
           )}
