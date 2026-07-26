@@ -117,7 +117,11 @@
     "booked": "Booked",
     "completed": "Completed",
     "cancelled": "Cancelled",
-    "noShow": "No Show"
+    "noShow": "No Show",
+    "approved": "Approved",
+    "pending": "Pending",
+    "rejected": "Rejected",
+    "changeRequested": "Change Requested"
   },
   "cleanup": {
     "cleanupVerification": "Cleanup Verification",

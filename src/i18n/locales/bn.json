@@ -117,7 +117,11 @@
     "booked": "বুক করা হয়েছে",
     "completed": "সম্পন্ন",
     "cancelled": "বাতিল",
-    "noShow": "উপস্থিত হননি"
+    "noShow": "উপস্থিত হননি",
+    "approved": "Approved",
+    "pending": "Pending",
+    "rejected": "Rejected",
+    "changeRequested": "Change Requested"
   },
   "cleanup": {
     "cleanupVerification": "পরিষ্কার যাচাই",

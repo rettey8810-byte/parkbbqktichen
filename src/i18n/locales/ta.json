@@ -117,7 +117,11 @@
     "booked": "முன்பதிவு செய்யப்பட்டது",
     "completed": "முடிந்தது",
     "cancelled": "ரத்து செய்யப்பட்டது",
-    "noShow": "வரவில்லை"
+    "noShow": "வரவில்லை",
+    "approved": "Approved",
+    "pending": "Pending",
+    "rejected": "Rejected",
+    "changeRequested": "Change Requested"
   },
   "cleanup": {
     "cleanupVerification": "சுத்திகரிப்பு சரிபார்ப்பு",

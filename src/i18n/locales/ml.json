@@ -117,7 +117,11 @@
     "booked": "ഴുക്ക് ചെയ്തു",
     "completed": "പൂർത്തിയായ",
     "cancelled": "റദ്ദാക്കി",
-    "noShow": "എത്തിയില്ല"
+    "noShow": "എത്തിയില്ല",
+    "approved": "Approved",
+    "pending": "Pending",
+    "rejected": "Rejected",
+    "changeRequested": "Change Requested"
   },
   "cleanup": {
     "cleanupVerification": "ക്ലീൻ-അപ്പ് പരിശോധന",
