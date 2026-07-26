@@ -36,9 +36,7 @@ The Park BBQ Kitchen Booking System is a web-based application that allows emplo
 2. Navigate to the application URL
 3. Scan the QR code below for quick access:
 
-```
-[QR CODE PLACEHOLDER - Insert QR code image here]
-```
+![QR Code](/images/13-qr-code.png)
 
 ---
 
@@ -52,10 +50,8 @@ The Park BBQ Kitchen Booking System is a web-based application that allows emplo
 3. Click "Book Now" to create a new booking
 4. Or click "Manage Booking" to view/change your existing bookings
 
-**Screenshot Placeholder:**
-```
-[SCREENSHOT: Home page with language selector, Book Now, and Manage Booking buttons]
-```
+**Screenshot:**
+![Home page](/images/01-home-page.png)
 
 ### 2. Booking a Kitchen Slot
 
@@ -76,41 +72,30 @@ The Park BBQ Kitchen Booking System is a web-based application that allows emplo
 9. Agree to the terms and conditions
 10. Sign using the signature pad
 11. Click "Submit Booking"
-12. Save your Booking Number and Password for future reference
+12. Save your Booking Number for future reference (sent to your email - check spam folder if not in inbox)
 
-**Screenshot Placeholder:**
-```
-[SCREENSHOT: Booking form with employee search fields]
-```
+**Screenshot:**
+![Booking form](/images/02-booking-form-employee-search.png)
 
-**Screenshot Placeholder:**
-```
-[SCREENSHOT: Calendar showing available dates within 3-day window]
-```
+**Screenshot:**
+![Calendar availability](/images/03-calendar-availability.png)
 
-**Screenshot Placeholder:**
-```
-[SCREENSHOT: Time slot selection dropdown]
-```
+**Screenshot:**
+![Time slot selection](/images/04-time-slot-selection.png)
 
-**Screenshot Placeholder:**
-```
-[SCREENSHOT: Signature pad for digital signature]
-```
+**Screenshot:**
+![Signature pad](/images/05-signature-pad.png)
 
-**Screenshot Placeholder:**
-```
-[SCREENSHOT: Booking success page with booking number and password]
-```
+**Screenshot:**
+![Booking success](/images/06-booking-success.png)
 
 ### 3. Managing Your Bookings
 
 **Steps:**
 1. Click "Manage Booking" on the home page
-2. Enter your Booking Number (received after booking)
-3. Enter your Booking Password (received after booking)
-4. Click "Search" to find your booking
-5. View your booking details including:
+2. Enter your Booking Number (received after booking via email)
+3. Click "Search" to find your booking
+4. View your booking details including:
    - Date and time
    - Employee name and department
    - Number of guests
@@ -118,15 +103,11 @@ The Park BBQ Kitchen Booking System is a web-based application that allows emplo
    - Booking status
    - Approval status
 
-**Screenshot Placeholder:**
-```
-[SCREENSHOT: Manage Booking page with booking number and password fields]
-```
+**Screenshot:**
+![Manage booking page](/images/07-manage-booking-page.png)
 
-**Screenshot Placeholder:**
-```
-[SCREENSHOT: Booking details display]
-```
+**Screenshot:**
+![Booking details](/images/08-booking-details.png)
 
 ### 4. Requesting Date/Time Changes
 
@@ -144,10 +125,8 @@ The Park BBQ Kitchen Booking System is a web-based application that allows emplo
 6. Click "Submit"
 7. Wait for admin approval (status will show "Change Requested")
 
-**Screenshot Placeholder:**
-```
-[SCREENSHOT: Change request form with date, slot, and reason fields]
-```
+**Screenshot:**
+![Change request form](/images/09-change-request-form.png)
 
 ### 5. Cancelling a Booking
 
@@ -156,10 +135,8 @@ The Park BBQ Kitchen Booking System is a web-based application that allows emplo
 2. Click "Cancel Booking" button
 3. Confirm cancellation
 
-**Screenshot Placeholder:**
-```
-[SCREENSHOT: Cancel booking confirmation]
-```
+**Screenshot:**
+![Cancel booking](/images/10-cancel-booking.png)
 
 ### 6. Completing Cleanup Checklist
 
@@ -167,7 +144,7 @@ The Park BBQ Kitchen Booking System is a web-based application that allows emplo
 
 **Steps:**
 1. Click "Manage Booking" on the home page
-2. Enter your Booking Number and Password
+2. Enter your Booking Number (received via email)
 3. Click "Search" to find your booking
 4. Complete all checklist items:
    - ✓ Kitchen cleaned thoroughly
@@ -179,34 +156,24 @@ The Park BBQ Kitchen Booking System is a web-based application that allows emplo
 6. Click "Complete Booking"
 7. Your booking status will change to "Completed"
 
-**Screenshot Placeholder:**
-```
-[SCREENSHOT: Kitchen completion checklist with checkboxes]
-```
+**Screenshot:**
+![Cleanup checklist](/images/11-cleanup-checklist.png)
 
-**Screenshot Placeholder:**
-```
-[SCREENSHOT: Kitchen image upload section]
-```
+**Screenshot:**
+![Kitchen image upload](/images/12-kitchen-image-upload.png)
 
-### 7. Booking Code and Password
+### 7. Booking Number
 
 After successful booking, you will receive:
-- **Booking Number**: A unique code for your booking (e.g., BK123ABC456)
-- **Booking Password**: A password to verify your booking
+- **Booking Number**: A unique code for your booking (e.g., BK123ABC456) - sent to your email
 
-**Important:** Save these credentials securely. You need them to:
+**Important:** Save your booking number securely. You need it to:
 - View your booking details
 - Request changes to your booking
 - Cancel your booking
 - Complete the cleanup checklist
 
-**Note:** If you forget your booking code or password, contact the admin. They can view all booking credentials in the admin panel.
-
-**Screenshot Placeholder:**
-```
-[SCREENSHOT: Booking confirmation with code and password displayed]
-```
+**Note:** If you forget your booking number, check your email (including spam folder) or contact the admin.
 
 ---
 
