@@ -6,17 +6,20 @@ export async function POST(request: NextRequest) {
     const body = await request.json();
     const { email, bookingNumber, employeeName, bookingDate, slot } = body;
 
+    console.log('=== EMAIL SEND START ===');
     console.log('Email request received:', { email, bookingNumber, employeeName, bookingDate, slot });
 
     // Check if API key is configured
     const sendgridApiKey = process.env.SENDGRID_API_KEY;
+    console.log('API Key present:', !!sendgridApiKey);
+    console.log('API Key length:', sendgridApiKey?.length);
+    
     if (!sendgridApiKey || sendgridApiKey === 'your_sendgrid_api_key_here') {
-      console.warn('SendGrid API key not configured. Skipping email send.');
+      console.error('SendGrid API key not configured');
       return NextResponse.json({ success: false, error: 'API key not configured' }, { status: 200 });
     }
 
-    console.log('Sending email with SendGrid');
-
+    console.log('Setting SendGrid API key...');
     sgMail.setApiKey(sendgridApiKey);
 
     const msg = {
@@ -53,11 +56,23 @@ export async function POST(request: NextRequest) {
       `,
     };
 
+    console.log('Message prepared:', { to: msg.to, from: msg.from, subject: msg.subject });
+    console.log('Sending email via SendGrid...');
+
     const data = await sgMail.send(msg);
-    console.log('SendGrid response:', JSON.stringify(data));
+    console.log('SendGrid response:', JSON.stringify(data, null, 2));
+    console.log('Email sent successfully');
+    console.log('=== EMAIL SEND END ===');
+    
     return NextResponse.json({ success: true, data });
-  } catch (error) {
-    console.error('Email send error:', error);
-    return NextResponse.json({ success: false, error }, { status: 500 });
+  } catch (error: any) {
+    console.error('=== EMAIL SEND ERROR ===');
+    console.error('Error details:', JSON.stringify(error, null, 2));
+    console.error('Error message:', error.message);
+    console.error('Error code:', error.code);
+    console.error('Error response:', error.response?.body);
+    console.error('=== END ERROR ===');
+    
+    return NextResponse.json({ success: false, error: error.message }, { status: 500 });
   }
 }
