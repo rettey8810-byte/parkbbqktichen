@@ -82,6 +82,28 @@ export async function createBooking(bookingData: Partial<Booking>) {
     throw new Error('invalid_slot');
   }
   
+  // Check 2-hour advance booking restriction for today
+  const bookingDate = new Date(bookingData.bookingDate!);
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+  const bookingDay = new Date(bookingDate);
+  bookingDay.setHours(0, 0, 0, 0);
+  
+  if (bookingDay.getTime() === today.getTime()) {
+    // Parse the slot time
+    const slotStartTime = bookingData.slot!.split('–')[0];
+    const [hour, minute] = slotStartTime.split(':').map(Number);
+    const slotTime = new Date();
+    slotTime.setHours(hour, minute, 0, 0);
+    
+    // Calculate minimum booking time (current time + 2 hours)
+    const minBookingTime = new Date(today.getTime() + 2 * 60 * 60 * 1000);
+    
+    if (slotTime < minBookingTime) {
+      throw new Error('slot_too_soon');
+    }
+  }
+  
   // Check if employee has any unclosed bookings (booked status without completed checklist and photo)
   const allBookings = await getAllBookings();
   const hasUnclosedBooking = allBookings.some(

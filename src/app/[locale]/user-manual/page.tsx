@@ -33,7 +33,7 @@ export default function UserManualPage() {
             </Button>
             <h1 className="text-xl font-semibold flex items-center">
               <Book className="w-5 h-5 mr-2" />
-              User Manual
+              {t('userManual.title')}
             </h1>
           </div>
           <LanguageSelector />
@@ -43,8 +43,8 @@ export default function UserManualPage() {
       <main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <Card className="mb-6">
           <CardHeader>
-            <CardTitle className="text-2xl">Park BBQ Kitchen Booking System</CardTitle>
-            <CardDescription>Complete guide for employees and administrators</CardDescription>
+            <CardTitle className="text-2xl">{t('userManual.title')}</CardTitle>
+            <CardDescription>{t('userManual.subtitle')}</CardDescription>
           </CardHeader>
         </Card>
 
@@ -55,7 +55,7 @@ export default function UserManualPage() {
             onClick={() => toggleSection('employee-guide')}
           >
             <div className="flex justify-between items-center">
-              <CardTitle className="text-xl">Employee Guide</CardTitle>
+              <CardTitle className="text-xl">{t('userManual.employeeGuide')}</CardTitle>
               {expandedSections.includes('employee-guide') ? (
                 <ChevronUp className="w-5 h-5" />
               ) : (
@@ -66,101 +66,50 @@ export default function UserManualPage() {
           {expandedSections.includes('employee-guide') && (
             <CardContent className="space-y-6">
               <div>
-                <h3 className="font-semibold text-lg mb-3">1. Home Page</h3>
-                <p className="text-gray-600 mb-3">Open the application URL, select your preferred language, then click "Book Now" to create a new booking or "Manage Booking" to view/change existing bookings.</p>
+                <h3 className="font-semibold text-lg mb-3">1. {t('userManual.homePage')}</h3>
+                <p className="text-gray-600 mb-3">{t('userManual.homePageDesc')}</p>
               </div>
 
               <div>
-                <h3 className="font-semibold text-lg mb-3">2. Booking a Kitchen Slot</h3>
+                <h3 className="font-semibold text-lg mb-3">2. {t('userManual.bookingKitchen')}</h3>
                 <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-3">
-                  <p className="text-blue-800 font-medium mb-2">Important Booking Restrictions:</p>
+                  <p className="text-blue-800 font-medium mb-2">{t('userManual.bookingRestrictions')}</p>
                   <ul className="list-disc list-inside text-blue-700 space-y-1 text-sm">
-                    <li><strong>3-Day Booking Window:</strong> You can only book for today, tomorrow, or the day after tomorrow (maximum 3 days in advance)</li>
-                    <li><strong>2-Hour Prior Booking:</strong> You can only book slots that are at least 2 hours in the future</li>
-                    <li>The calendar will only show available dates within the 3-day window</li>
+                    <li><strong>{t('userManual.restriction1')}</strong></li>
+                    <li><strong>{t('userManual.restriction2')}</strong></li>
+                    <li>{t('userManual.restriction3')}</li>
                   </ul>
                 </div>
                 <ol className="list-decimal list-inside space-y-2 text-gray-600">
-                  <li>Click "Book Now" on the home page</li>
-                  <li>Select your name from the dropdown or search by name</li>
-                  <li>Enter your Employee Code (e.g., 13011)</li>
-                  <li>Select the booking date from the calendar (only shows today + 2 days)</li>
-                  <li>Choose a time slot from available slots (green = available, red = fully booked)</li>
-                  <li>Enter number of guests (pax) - Maximum 50 guests</li>
-                  <li>Enter your contact number</li>
-                  <li>Add any remarks (optional)</li>
-                  <li>Agree to the terms and conditions</li>
-                  <li>Sign using the signature pad</li>
-                  <li>Click "Submit Booking"</li>
-                  <li>Save your Booking Number and Password for future reference</li>
+                  <li>{t('userManual.bookingStep1')}</li>
+                  <li>{t('userManual.bookingStep2')}</li>
+                  <li>{t('userManual.bookingStep3')}</li>
+                  <li>{t('userManual.bookingStep4')}</li>
+                  <li>{t('userManual.bookingStep5')}</li>
+                  <li>{t('userManual.bookingStep6')}</li>
+                  <li>{t('userManual.bookingStep7')}</li>
+                  <li>{t('userManual.bookingStep8')}</li>
+                  <li>{t('userManual.bookingStep9')}</li>
+                  <li>{t('userManual.bookingStep10')}</li>
+                  <li>{t('userManual.bookingStep11')}</li>
+                  <li>{t('userManual.bookingStep12')}</li>
+                  <li>{t('userManual.bookingStep13')}</li>
                 </ol>
               </div>
 
               <div>
-                <h3 className="font-semibold text-lg mb-3">3. Managing Your Bookings</h3>
-                <ol className="list-decimal list-inside space-y-2 text-gray-600">
-                  <li>Click "Manage Booking" on the home page</li>
-                  <li>Enter your Booking Number (received after booking)</li>
-                  <li>Enter your Booking Password (received after booking)</li>
-                  <li>Click "Search" to find your booking</li>
-                  <li>View your booking details including date, time, and status</li>
-                  <li>Request changes, cancel, or complete the cleanup checklist</li>
-                </ol>
+                <h3 className="font-semibold text-lg mb-3">3. {t('userManual.managingBookings')}</h3>
+                <p className="text-gray-600">{t('userManual.managingBookingsDesc')}</p>
               </div>
 
               <div>
-                <h3 className="font-semibold text-lg mb-3">4. Requesting Date/Time Changes</h3>
-                <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4 mb-3">
-                  <p className="text-yellow-800 font-medium">Important: Change requests are subject to the same booking restrictions (3-day window and 2-hour prior). You can only change to dates within the 3-day window and slots that are at least 2 hours in the future.</p>
-                </div>
-                <ol className="list-decimal list-inside space-y-2 text-gray-600">
-                  <li>Access your booking using Manage Booking</li>
-                  <li>Click "Request Change" button</li>
-                  <li>Select new date from calendar (only shows today + 2 days)</li>
-                  <li>Choose new time slot from available options</li>
-                  <li>Enter reason for change</li>
-                  <li>Click "Submit"</li>
-                  <li>Wait for admin approval (status will show "Change Requested")</li>
-                </ol>
+                <h3 className="font-semibold text-lg mb-3">4. {t('userManual.changeRequests')}</h3>
+                <p className="text-gray-600">{t('userManual.changeRequestsDesc')}</p>
               </div>
 
               <div>
-                <h3 className="font-semibold text-lg mb-3">5. Cancelling a Booking</h3>
-                <ol className="list-decimal list-inside space-y-2 text-gray-600">
-                  <li>Access your booking using Manage Booking</li>
-                  <li>Click "Cancel Booking" button</li>
-                  <li>Confirm cancellation</li>
-                </ol>
-              </div>
-
-              <div>
-                <h3 className="font-semibold text-lg mb-3">6. Completing Cleanup Checklist</h3>
-                <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4 mb-3">
-                  <p className="text-yellow-800 font-medium">Important: You cannot make a new booking until you complete the cleanup checklist for your previous booking.</p>
-                </div>
-                <ol className="list-decimal list-inside space-y-2 text-gray-600">
-                  <li>Click "Manage Booking" on the home page</li>
-                  <li>Enter your Booking Number and Password</li>
-                  <li>Click "Search" to find your booking</li>
-                  <li>Complete all checklist items:
-                    <ul className="list-disc list-inside ml-6 mt-2 space-y-1">
-                      <li>Kitchen cleaned thoroughly</li>
-                      <li>All equipment returned to proper place</li>
-                      <li>Gas turned off completely</li>
-                      <li>All trash disposed properly</li>
-                      <li>All surfaces wiped down</li>
-                    </ul>
-                  </li>
-                  <li>Upload a photo of the cleaned kitchen</li>
-                  <li>Click "Complete Booking"</li>
-                  <li>Your booking status will change to "Completed"</li>
-                </ol>
-              </div>
-
-              <div>
-                <h3 className="font-semibold text-lg mb-3">7. Booking Code and Password</h3>
-                <p className="text-gray-600 mb-3">After successful booking, you will receive a Booking Number and Password. Save these credentials securely. You need them to view your booking details, request changes, cancel your booking, and complete the cleanup checklist.</p>
-                <p className="text-gray-600">If you forget your booking code or password, contact the admin. They can view all booking credentials in the admin panel.</p>
+                <h3 className="font-semibold text-lg mb-3">5. {t('userManual.cleanupChecklist')}</h3>
+                <p className="text-gray-600">{t('userManual.cleanupChecklistDesc')}</p>
               </div>
             </CardContent>
           )}

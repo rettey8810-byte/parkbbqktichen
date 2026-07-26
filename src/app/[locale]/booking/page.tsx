@@ -186,7 +186,33 @@ export default function BookingPage() {
       const dateStr = format(selectedDate, 'yyyy-MM-dd');
       try {
         const slots = await getAvailableSlots(dateStr);
-        setAvailableSlots(slots);
+        
+        // Filter slots based on 2-hour advance booking restriction for today
+        const now = new Date();
+        const today = new Date();
+        today.setHours(0, 0, 0, 0);
+        const selectedDay = new Date(selectedDate);
+        selectedDay.setHours(0, 0, 0, 0);
+        
+        const filteredSlots = slots.filter(slot => {
+          // If booking is for today, apply 2-hour advance restriction
+          if (selectedDay.getTime() === today.getTime()) {
+            const { hour: slotHour, minute: slotMinute } = getSlotStartTime(slot);
+            const slotTime = new Date();
+            slotTime.setHours(slotHour, slotMinute, 0, 0);
+            
+            // Calculate minimum booking time (current time + 2 hours)
+            const minBookingTime = new Date(now.getTime() + 2 * 60 * 60 * 1000);
+            
+            // Only allow slots that are at least 2 hours from now
+            return slotTime >= minBookingTime;
+          }
+          
+          // For future dates, all slots are available
+          return true;
+        });
+        
+        setAvailableSlots(filteredSlots);
       } catch (err) {
         // If Firebase permissions error, assume all slots available
         setAvailableSlots(TIME_SLOTS);
@@ -329,6 +355,8 @@ export default function BookingPage() {
         setError(t('booking.alreadyBooked'));
       } else if (err.message === 'slot_unavailable') {
         setError(t('booking.slotUnavailable'));
+      } else if (err.message === 'slot_too_soon') {
+        setError('Bookings must be made at least 2 hours in advance for today.');
       } else if (err.message === 'unclosed_booking') {
         setError('You have an unclosed booking. Please complete the cleanup checklist and upload a photo before making a new booking.');
       } else {
