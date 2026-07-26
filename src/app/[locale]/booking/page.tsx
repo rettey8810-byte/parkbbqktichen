@@ -297,7 +297,8 @@ export default function BookingPage() {
       // Send booking confirmation email
       if (email) {
         try {
-          await fetch('/api/send-booking-email', {
+          console.log('Sending email to:', email);
+          const emailResponse = await fetch('/api/send-booking-email', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
@@ -310,6 +311,13 @@ export default function BookingPage() {
               slot,
             }),
           });
+          const emailData = await emailResponse.json();
+          console.log('Email response:', emailData);
+          if (emailData.success) {
+            console.log('Email sent successfully');
+          } else {
+            console.warn('Email send failed:', emailData.error);
+          }
         } catch (emailError) {
           console.error('Failed to send confirmation email:', emailError);
           // Don't fail the booking if email fails

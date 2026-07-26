@@ -6,12 +6,16 @@ export async function POST(request: NextRequest) {
     const body = await request.json();
     const { email, bookingNumber, employeeName, bookingDate, slot } = body;
 
+    console.log('Email request received:', { email, bookingNumber, employeeName, bookingDate, slot });
+
     // Check if API key is configured
     const resendApiKey = process.env.RESEND_API_KEY;
     if (!resendApiKey || resendApiKey === 'your_resend_api_key_here') {
       console.warn('Resend API key not configured. Skipping email send.');
       return NextResponse.json({ success: false, error: 'API key not configured' }, { status: 200 });
     }
+
+    console.log('Sending email with API key:', resendApiKey.substring(0, 10) + '...');
 
     const resend = new Resend(resendApiKey);
     const data = await resend.emails.send({
