@@ -48,7 +48,15 @@
             font-size: 16px;
             box-sizing: border-box;
         }
-        input:focus {
+        select {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+        select:focus {
             outline: none;
             border-color: #667eea;
         }
@@ -114,8 +122,16 @@
                 type="url" 
                 id="appUrl" 
                 placeholder="https://your-app-url.com" 
-                value="https://park-bbq-kitchen.vercel.app"
+                value="https://parkbbqkitchen.hawadaily.com"
             >
+        </div>
+        
+        <div class="input-group">
+            <label for="format">Format:</label>
+            <select id="format" onchange="generateQRCode()">
+                <option value="portrait">Portrait (Square)</option>
+                <option value="landscape">Landscape (Widescreen)</option>
+            </select>
         </div>
         
         <button onclick="generateQRCode()">Generate QR Code</button>
@@ -172,13 +188,31 @@
 
             const canvas = document.getElementById('qrCanvas');
             const ctx = canvas.getContext('2d');
+            const format = document.getElementById('format').value;
             
-            // Set canvas size (QR code + padding + header)
+            // Set canvas size based on format
             const qrSize = 256;
             const padding = 20;
-            const headerHeight = 80; // Increased to accommodate logo
-            canvas.width = qrSize + padding * 2;
-            canvas.height = qrSize + padding * 2 + headerHeight;
+            const headerHeight = 80;
+            
+            let canvasWidth, canvasHeight, qrX, qrY;
+            
+            if (format === 'landscape') {
+                // Widescreen landscape format
+                canvasWidth = qrSize + padding * 4; // Wider
+                canvasHeight = qrSize + padding * 2 + headerHeight;
+                qrX = (canvasWidth - qrSize) / 2; // Center QR horizontally
+                qrY = padding + headerHeight + padding;
+            } else {
+                // Portrait (square) format
+                canvasWidth = qrSize + padding * 2;
+                canvasHeight = qrSize + padding * 2 + headerHeight;
+                qrX = padding;
+                qrY = padding + headerHeight + padding;
+            }
+            
+            canvas.width = canvasWidth;
+            canvas.height = canvasHeight;
 
             // Fill background
             ctx.fillStyle = '#ffffff';
@@ -189,9 +223,11 @@
             ctx.lineWidth = 4;
             ctx.strokeRect(2, 2, canvas.width - 4, canvas.height - 4);
 
-            // Add header background
+            // Add header background (centered in landscape)
+            const headerWidth = format === 'landscape' ? qrSize : qrSize;
+            const headerX = format === 'landscape' ? (canvasWidth - headerWidth) / 2 : padding;
             ctx.fillStyle = '#667eea';
-            ctx.fillRect(padding, padding, qrSize, headerHeight);
+            ctx.fillRect(headerX, padding, headerWidth, headerHeight);
 
             // Load and draw logo
             const logoImg = new Image();
@@ -199,7 +235,7 @@
             logoImg.onload = function() {
                 // Draw logo centered in header
                 const logoSize = 40;
-                const logoX = padding + (qrSize - logoSize) / 2;
+                const logoX = headerX + (headerWidth - logoSize) / 2;
                 const logoY = padding + 10;
                 ctx.drawImage(logoImg, logoX, logoY, logoSize, logoSize);
 
@@ -215,9 +251,8 @@
                 ctx.fillStyle = '#ffffff';
                 ctx.fillText('Booking System', canvas.width / 2, padding + 10 + logoSize + 30);
 
-                // Draw QR code
-                const qrY = padding + headerHeight + padding;
-                ctx.drawImage(qrImg, padding, qrY, qrSize, qrSize);
+                // Draw QR code (centered in landscape)
+                ctx.drawImage(qrImg, qrX, qrY, qrSize, qrSize);
 
                 // Convert canvas to image
                 const brandedQR = document.getElementById('brandedQR');
@@ -246,9 +281,8 @@
                 ctx.fillStyle = '#ffffff';
                 ctx.fillText('Booking System', canvas.width / 2, padding + headerHeight / 2 + 20);
 
-                // Draw QR code
-                const qrY = padding + headerHeight + padding;
-                ctx.drawImage(qrImg, padding, qrY, qrSize, qrSize);
+                // Draw QR code (centered in landscape)
+                ctx.drawImage(qrImg, qrX, qrY, qrSize, qrSize);
 
                 // Convert canvas to image
                 const brandedQR = document.getElementById('brandedQR');
