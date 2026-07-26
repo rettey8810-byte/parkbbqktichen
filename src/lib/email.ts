@@ -11,7 +11,7 @@ export async function sendBookingConfirmationEmail(
 ) {
   try {
     const data = await resend.emails.send({
-      from: 'Park BBQ Kitchen <noreply@yourdomain.com>',
+      from: 'Park BBQ Kitchen <villaparkbbqkitchen@gmail.com>',
       to: [email],
       subject: 'Your Park BBQ Kitchen Booking Confirmation',
       html: `
