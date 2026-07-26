@@ -8,6 +8,7 @@ import { LanguageSelector } from '@/components/LanguageSelector';
 import Footer from '@/components/Footer';
 import { ArrowLeft, Book, ChevronDown, ChevronUp } from 'lucide-react';
 import { useState } from 'react';
+import Image from 'next/image';
 
 export default function UserManualPage() {
   const t = useTranslations();
@@ -68,6 +69,16 @@ export default function UserManualPage() {
               <div>
                 <h3 className="font-semibold text-lg mb-3">1. {t('userManual.homePage')}</h3>
                 <p className="text-gray-600 mb-3">{t('userManual.homePageDesc')}</p>
+                <div className="my-4 rounded-lg overflow-hidden border">
+                  <Image 
+                    src="/images/01-home-page.png" 
+                    alt="Home page" 
+                    width={800}
+                    height={400}
+                    className="w-full h-auto"
+                    unoptimized
+                  />
+                </div>
               </div>
 
               <div>
@@ -95,21 +106,127 @@ export default function UserManualPage() {
                   <li>{t('userManual.bookingStep12')}</li>
                   <li>{t('userManual.bookingStep13')}</li>
                 </ol>
+                <div className="my-4 space-y-4">
+                  <div className="rounded-lg overflow-hidden border">
+                    <Image 
+                      src="/images/02-booking-form-employee-search.png" 
+                      alt="Booking form" 
+                      width={800}
+                      height={400}
+                      className="w-full h-auto"
+                      unoptimized
+                    />
+                  </div>
+                  <div className="rounded-lg overflow-hidden border">
+                    <Image 
+                      src="/images/03-calendar-availability.png" 
+                      alt="Calendar availability" 
+                      width={800}
+                      height={400}
+                      className="w-full h-auto"
+                      unoptimized
+                    />
+                  </div>
+                  <div className="rounded-lg overflow-hidden border">
+                    <Image 
+                      src="/images/04-time-slot-selection.png" 
+                      alt="Time slot selection" 
+                      width={800}
+                      height={400}
+                      className="w-full h-auto"
+                      unoptimized
+                    />
+                  </div>
+                  <div className="rounded-lg overflow-hidden border">
+                    <Image 
+                      src="/images/05-signature-pad.png" 
+                      alt="Signature pad" 
+                      width={800}
+                      height={400}
+                      className="w-full h-auto"
+                      unoptimized
+                    />
+                  </div>
+                  <div className="rounded-lg overflow-hidden border">
+                    <Image 
+                      src="/images/06-booking-success.png" 
+                      alt="Booking success" 
+                      width={800}
+                      height={400}
+                      className="w-full h-auto"
+                      unoptimized
+                    />
+                  </div>
+                </div>
               </div>
 
               <div>
                 <h3 className="font-semibold text-lg mb-3">3. {t('userManual.managingBookings')}</h3>
-                <p className="text-gray-600">{t('userManual.managingBookingsDesc')}</p>
+                <p className="text-gray-600 mb-3">{t('userManual.managingBookingsDesc')}</p>
+                <div className="my-4 space-y-4">
+                  <div className="rounded-lg overflow-hidden border">
+                    <Image 
+                      src="/images/07-manage-booking-page.png" 
+                      alt="Manage booking page" 
+                      width={800}
+                      height={400}
+                      className="w-full h-auto"
+                      unoptimized
+                    />
+                  </div>
+                  <div className="rounded-lg overflow-hidden border">
+                    <Image 
+                      src="/images/08-booking-details.png" 
+                      alt="Booking details" 
+                      width={800}
+                      height={400}
+                      className="w-full h-auto"
+                      unoptimized
+                    />
+                  </div>
+                </div>
               </div>
 
               <div>
                 <h3 className="font-semibold text-lg mb-3">4. {t('userManual.changeRequests')}</h3>
-                <p className="text-gray-600">{t('userManual.changeRequestsDesc')}</p>
+                <p className="text-gray-600 mb-3">{t('userManual.changeRequestsDesc')}</p>
+                <div className="my-4 rounded-lg overflow-hidden border">
+                  <Image 
+                    src="/images/09-change-request-form.png" 
+                    alt="Change request form" 
+                    width={800}
+                    height={400}
+                    className="w-full h-auto"
+                    unoptimized
+                  />
+                </div>
               </div>
 
               <div>
                 <h3 className="font-semibold text-lg mb-3">5. {t('userManual.cleanupChecklist')}</h3>
-                <p className="text-gray-600">{t('userManual.cleanupChecklistDesc')}</p>
+                <p className="text-gray-600 mb-3">{t('userManual.cleanupChecklistDesc')}</p>
+                <div className="my-4 space-y-4">
+                  <div className="rounded-lg overflow-hidden border">
+                    <Image 
+                      src="/images/11-cleanup-checklist.png" 
+                      alt="Cleanup checklist" 
+                      width={800}
+                      height={400}
+                      className="w-full h-auto"
+                      unoptimized
+                    />
+                  </div>
+                  <div className="rounded-lg overflow-hidden border">
+                    <Image 
+                      src="/images/12-kitchen-image-upload.png" 
+                      alt="Kitchen image upload" 
+                      width={800}
+                      height={400}
+                      className="w-full h-auto"
+                      unoptimized
+                    />
+                  </div>
+                </div>
               </div>
             </CardContent>
           )}

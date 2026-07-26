@@ -129,8 +129,8 @@
         <div class="input-group">
             <label for="format">Format:</label>
             <select id="format" onchange="generateQRCode()">
+                <option value="landscape" selected>Landscape (Widescreen)</option>
                 <option value="portrait">Portrait (Square)</option>
-                <option value="landscape">Landscape (Widescreen)</option>
             </select>
         </div>
         
@@ -198,16 +198,16 @@
             let canvasWidth, canvasHeight, qrX, qrY;
             
             if (format === 'landscape') {
-                // Widescreen landscape format
-                canvasWidth = qrSize + padding * 4; // Wider
-                canvasHeight = qrSize + padding * 2 + headerHeight;
+                // Widescreen landscape format (wider than tall)
+                canvasWidth = 600; // Wider
+                canvasHeight = 400; // Shorter
                 qrX = (canvasWidth - qrSize) / 2; // Center QR horizontally
                 qrY = padding + headerHeight + padding;
             } else {
                 // Portrait (square) format
-                canvasWidth = qrSize + padding * 2;
-                canvasHeight = qrSize + padding * 2 + headerHeight;
-                qrX = padding;
+                canvasWidth = qrSize + padding * 2; // 296
+                canvasHeight = qrSize + padding * 2 + headerHeight; // 376
+                qrX = (canvasWidth - qrSize) / 2; // Center QR horizontally
                 qrY = padding + headerHeight + padding;
             }
             
@@ -223,9 +223,9 @@
             ctx.lineWidth = 4;
             ctx.strokeRect(2, 2, canvas.width - 4, canvas.height - 4);
 
-            // Add header background (centered in landscape)
+            // Add header background (centered in both formats)
             const headerWidth = format === 'landscape' ? qrSize : qrSize;
-            const headerX = format === 'landscape' ? (canvasWidth - headerWidth) / 2 : padding;
+            const headerX = (canvasWidth - headerWidth) / 2;
             ctx.fillStyle = '#667eea';
             ctx.fillRect(headerX, padding, headerWidth, headerHeight);
 
