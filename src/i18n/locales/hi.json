@@ -221,7 +221,7 @@
     "goToHome": "होम पर जाएं",
     "credentialsCopied": "क्रेडेंशियल्स क्लिपबोर्ड पर कॉपी किए गए!",
     "bookingSuccessful": "बुकिंग सफल!",
-    "saveYourCredentials": "बाद में अपनी बुकिंग प्रबंधित करने के लिए कृपया अपने बुकिंग क्रेडेंशियल्स सहेजें"
+    "saveYourCredentials": "बाद में अपनी बुकिंग प्रबंधित करने के लिए कृपया अपने बुकिंग क्रेडेंशियल्स सहेजें Your booking number has been sent to your email (check spam folder if not in inbox)"
   },
   "manageBooking": {
     "findYourBooking": "अपनी बुकिंग खोजें",
@@ -289,7 +289,7 @@
     "contactAdmin": "एडमिन से संपर्क करें",
     "contactAdminDesc": "मदद की जरूरत हो तो, कई बुकिंग न करके एडमिन से संपर्क करें",
     "saveBookingNumber": "बुकिंग नंबर सहेजें",
-    "saveBookingNumberDesc": "अपना बुकिंग नंबर सुरक्षित रूप से सहेजें - यह बुकिंग के बाद आपके ईमेल पर भेजा जाएगा"
+    "saveBookingNumberDesc": "अपना बुकिंग नंबर सुरक्षित रूप से सहेजें - यह बुकिंग के बाद आपके ईमेल पर भेजा जाएगा (check spam folder if not in inbox)"
   },
   "faq": {
     "title": "अक्सर पूछे जाने वाले प्रश्न",

@@ -221,7 +221,7 @@
     "goToHome": "ഹോമിലേക്ക് പോകുക",
     "credentialsCopied": "ക്രെഡൻഷ്യൽസ് ക്ലിപ്പ്ബോർഡിലേക്ക് കോപ്പി ചെയ്തു!",
     "bookingSuccessful": "ബുക്കിംഗ് വിജയിച്ചു!",
-    "saveYourCredentials": "പിന്നീട് നിങ്ങളുടെ ബുക്കിംഗ് നിർവഹിക്കാൻ നിങ്ങളുടെ ബുക്കിംഗ് ക്രെഡൻഷ്യൽസ് സേവ് ചെയ്യുക"
+    "saveYourCredentials": "പിന്നീട് നിങ്ങളുടെ ബുക്കിംഗ് നിർവഹിക്കാൻ നിങ്ങളുടെ ബുക്കിംഗ് ക്രെഡൻഷ്യൽസ് സേവ് ചെയ്യുക Your booking number has been sent to your email (check spam folder if not in inbox)"
   },
   "manageBooking": {
     "findYourBooking": "നിങ്ങളുടെ ബുക്കിംഗ് കണ്ടെത്തുക",
@@ -289,7 +289,7 @@
     "contactAdmin": "അഡ്മിനെ കോണ്ടാക്ട് ചെയ്യുക",
     "contactAdminDesc": "സഹായം ആവശ്യമെങ്കിൽ, ബഹു ബുക്കിംഗുകൾ ചെയ്യാതെ അഡ്മിനെ കോണ്ടാക്ട് ചെയ്യുക",
     "saveBookingNumber": "ബുക്കിംഗ് നമ്പർ സേവ് ചെയ്യുക",
-    "saveBookingNumberDesc": "നിങ്ങളുടെ ബുക്കിംഗ് നമ്പർ സേവ് ചെയ്യുക ഇത് ബുക്കിംഗ് ശേഷം നിങ്ങളുടെ ഇമെയിലിൽ അയയ്ക്കും"
+    "saveBookingNumberDesc": "നിങ്ങളുടെ ബുക്കിംഗ് നമ്പർ സേവ് ചെയ്യുക ഇത് ബുക്കിംഗ് ശേഷം നിങ്ങളുടെ ഇമെയിലിൽ അയയ്ക്കും (check spam folder if not in inbox)"
   },
   "faq": {
     "title": "സാധാരണമായി ചോദിക്കുന്ന ചോദ്യങ്ങൾ",

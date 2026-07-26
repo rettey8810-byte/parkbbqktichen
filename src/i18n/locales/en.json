@@ -221,7 +221,7 @@
     "goToHome": "Go to Home",
     "credentialsCopied": "Credentials copied to clipboard!",
     "bookingSuccessful": "Booking Successful!",
-    "saveYourCredentials": "Please save your booking credentials to manage your booking later"
+    "saveYourCredentials": "Please save your booking number to manage your booking later. Your booking number has been sent to your email (check spam folder if not in inbox)"
   },
   "manageBooking": {
     "findYourBooking": "Find Your Booking",
@@ -279,7 +279,7 @@
     "bookEarly": "Book Early",
     "bookEarlyDesc": "Book your slot in advance to ensure availability",
     "saveBookingNumber": "Save Booking Number",
-    "saveBookingNumberDesc": "Save your booking number securely - it will be sent to your email after booking",
+    "saveBookingNumberDesc": "Save your booking number securely - it will be sent to your email after booking (check spam folder if not in inbox)",
     "completeCleanup": "Complete Cleanup",
     "completeCleanupDesc": "Always complete the cleanup checklist to avoid blocking future bookings",
     "requestChangesEarly": "Request Changes Early",

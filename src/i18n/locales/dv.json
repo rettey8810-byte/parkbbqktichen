@@ -221,7 +221,7 @@
     "goToHome": "ހޯމަށް ވަދެވޭ",
     "credentialsCopied": "ކްރެޑެންޝަލްސް ކްލިޕްބޯޑަށް ކޮޕީ ކުރެވިއްޖެ!",
     "bookingSuccessful": "ބުކިންގ ކާމިޔާބު!",
-    "saveYourCredentials": "ފަހުން ތިބާގެ ބުކިންގ މެނޭޖް ކުރުމަށް ތިބާގެ ބުކިންގ ކްރެޑެންޝަލްސް ސޭވް ކުރޭ"
+    "saveYourCredentials": "ފަހުން ތިބާގެ ބުކިންގ މެނޭޖް ކުރުމަށް ތިބާގެ ބުކިންގ ކްރެޑެންޝަލްސް ސޭވް ކުރޭ Your booking number has been sent to your email (check spam folder if not in inbox)"
   },
   "manageBooking": {
     "findYourBooking": "ތިބާގެ ބުކިންގ ހޯދަން",
@@ -289,7 +289,7 @@
     "contactAdmin": "އެޑްމިންނާ ކޮންޓެކްޓް ކުރޭ",
     "contactAdminDesc": "އެހެން އެހީތި ބޭނުންނަމަ، އެޑްމިންނާ ކޮންޓެކްޓް ކުރޭ، ބައިބުކިންގތައް ނުހެދޭ",
     "saveBookingNumber": "ބުކްނިން ނަމްބަރ ސޭވް ކުރާމުގެ",
-    "saveBookingNumberDesc": "ބުކްނިން ނަމްބަރ ސޭވް ކުރާމުގެ - އެއް އެމެއިލް އިން ބުކްނިން ފަހުން ހޯދާނެ"
+    "saveBookingNumberDesc": "ބުކްނިން ނަމްބަރ ސޭވް ކުރާމުގެ - އެއް އެމެއިލް އިން ބުކްނިން ފަހުން ހޯދާނެ (check spam folder if not in inbox)"
   },
   "faq": {
     "title": "ހިތްވަރުކުރާ ސުވާލުތައް",

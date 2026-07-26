@@ -221,7 +221,7 @@
     "goToHome": "হোমে যান",
     "credentialsCopied": "ক্রেডেনশিয়ালস ক্লিপবোর্ডে কপি হয়েছে!",
     "bookingSuccessful": "বুকিং সফল!",
-    "saveYourCredentials": "পরবর্তীতে আপনার বুকিং পরিচালনা করতে আপনার বুকিং ক্রেডেনশিয়ালস সংরক্ষণ করুন"
+    "saveYourCredentials": "পরবর্তীতে আপনার বুকিং পরিচালনা করতে আপনার বুকিং ক্রেডেনশিয়ালস সংরক্ষণ করুন Your booking number has been sent to your email (check spam folder if not in inbox)"
   },
   "manageBooking": {
     "findYourBooking": "আপনার বুকিং খুঁজুন",
@@ -289,7 +289,7 @@
     "contactAdmin": "অ্যাডমিনের সাথে যোগাযোগ করুন",
     "contactAdminDesc": "সাহায্য প্রয়োজন হলে, একাধিক বুকিং না করে অ্যাডমিনের সাথে যোগাযোগ করুন",
     "saveBookingNumber": "বুকিং নম্বর সংরক্ষণ করুন",
-    "saveBookingNumberDesc": "আপনার বুকিং নম্বর নিরাপদে সংরক্ষণ করুন - এটি বুকিং এর পরে আপনার ইমেইলে পাঠানো হবে"
+    "saveBookingNumberDesc": "আপনার বুকিং নম্বর নিরাপদে সংরক্ষণ করুন - এটি বুকিং এর পরে আপনার ইমেইলে পাঠানো হবে (check spam folder if not in inbox)"
   },
   "faq": {
     "title": "সাধারণ প্রশ্নাবলী",

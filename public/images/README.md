@@ -12,7 +12,7 @@ Save the following screenshots in this folder (`public/images/`) with the exact 
 - `03-calendar-availability.png` - Calendar showing available dates with color-coded availability (3-day window)
 - `04-time-slot-selection.png` - Time slot selection dropdown (minimum 2 hours in advance)
 - `05-signature-pad.png` - Signature pad for digital signature
-- `06-booking-success.png` - Booking success page with booking number (sent via email)
+- `06-booking-success.png` - Booking success page with booking number (sent via email - check spam folder if not in inbox)
 
 ### Booking Management
 - `07-manage-booking-page.png` - Manage Booking page with booking number field only (no password)
