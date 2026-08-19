@@ -1,0 +1,21 @@
+[build]
+  command = "npm run build"
+  publish = ".next"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
+
+[build.environment]
+  NODE_VERSION = "18"
+  NEXT_PUBLIC_FIREBASE_API_KEY = "AIzaSyAUvHQN1gdg4W8NjEfM-wlEK4g0TV12oRk"
+  NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN = "park-bbq-kitchen.firebaseapp.com"
+  NEXT_PUBLIC_FIREBASE_PROJECT_ID = "park-bbq-kitchen"
+  NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET = "park-bbq-kitchen.firebasestorage.app"
+  NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID = "1043893165915"
+  NEXT_PUBLIC_FIREBASE_APP_ID = "1:1043893165915:web:9cd6c5ca09fcec9397847e"
+  NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID = "G-KJNPPEZEB3"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
