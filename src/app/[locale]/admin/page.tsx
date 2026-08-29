@@ -240,6 +240,25 @@ export default function AdminPage() {
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
         <h2 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6">{t('admin.adminDashboard')}</h2>
 
+        <Card className="mb-6 sm:mb-8 bg-red-50 border-red-200">
+          <CardHeader>
+            <CardTitle className="text-red-800">Subscription Expired</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <p className="text-red-900 mb-4">
+              Your subscription expired on 31st August 2026. To continue service, please proceed with payment or contact the service provider.
+            </p>
+            <div className="border-t border-red-200 pt-4 mt-4">
+              <p className="text-sm text-red-800">
+                <strong>Ibrahim Gasim</strong><br />
+                Best regards<br />
+                Director of Finance<br />
+                Hawainn Elevation
+              </p>
+            </div>
+          </CardContent>
+        </Card>
+
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6 mb-6 sm:mb-8">
           <Card>
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
